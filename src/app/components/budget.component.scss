@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+$table-border-color: rgb(43, 94, 156);
+$primary-color: rgb(51, 120, 204);
+$secondary-color: rgb(50, 98, 156);
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+table, th, td {
+   border: solid $table-border-color .1rem; 
+   border-collapse: collapse;
+   padding: 1rem;
+} 
+th {
+    background: $primary-color;
+    color: white;
+}
+table {
+    margin: 0% auto;
+    align-content: center;
+    padding: 0rem;
+    border-collapse: collapse;
+    border: solid $table-border-color .15rem;  
+}
+.input-container {
+    margin-top: 3rem;
+}
+.input-container > input, .input-container > button {
+    padding: .6rem;
+}
+.input-container > input, .expense-input-wrapper > input {
+    border: none;
+    border-bottom: solid rgb(199, 199, 199) .1rem;
+}
+.input-container > input:focus, .expense-input-wrapper > input:focus {
+    outline: none;
+    border-bottom: solid rgb(0, 0, 0) .1rem;
+}
+.input-container > button, .expense-button-wrapper > button {
+    background: $primary-color;
+    border: solid $primary-color .1rem;
+    color: white;
+}
+.input-container > button:hover, .expense-button-wrapper > button:hover {
+    background: $secondary-color;
+    border-color: $secondary-color;
+}
+.expense-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-width: 300px;
+    padding: 1rem;
+}
+.expense-input-wrapper > input {
+    padding: 1rem;
+}
+.expense-button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: .4rem;
+}
+.expense-button-wrapper > button {
+    padding: .7rem;
+    margin-left: .5rem;
+}
+

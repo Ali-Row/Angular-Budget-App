@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+table, th, td {
+  border: solid #2b5e9c 0.1rem;
+  border-collapse: collapse;
+  padding: 1rem;
+}
+
+th {
+  background: #3378cc;
+  color: white;
+}
+
+table {
+  margin: 0% auto;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 0rem;
+  border-collapse: collapse;
+  border: solid #2b5e9c 0.15rem;
+}
+
+.input-container {
+  margin-top: 3rem;
+}
+
+.input-container > input, .input-container > button {
+  padding: 0.6rem;
+}
+
+.input-container > input, .expense-input-wrapper > input {
+  border: none;
+  border-bottom: solid #c7c7c7 0.1rem;
+}
+
+.input-container > input:focus, .expense-input-wrapper > input:focus {
+  outline: none;
+  border-bottom: solid black 0.1rem;
+}
+
+.input-container > button, .expense-button-wrapper > button {
+  background: #3378cc;
+  border: solid #3378cc 0.1rem;
+  color: white;
+}
+
+.input-container > button:hover, .expense-button-wrapper > button:hover {
+  background: #32629c;
+  border-color: #32629c;
+}
+
+.expense-input-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+  max-width: 300px;
+  padding: 1rem;
+}
+
+.expense-input-wrapper > input {
+  padding: 1rem;
+}
+
+.expense-button-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-top: 0.4rem;
+}
+
+.expense-button-wrapper > button {
+  padding: 0.7rem;
+  margin-left: 0.5rem;
+}
+/*# sourceMappingURL=budget.component.css.map */

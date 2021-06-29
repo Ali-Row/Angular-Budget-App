@@ -1,4 +1,4 @@
-<div>
+<div class="table-container">
     <table>
         <thead>
             <tr>
@@ -7,20 +7,47 @@
                 <th>Priority</th>
                 <th>Desired Percentage of Total Monthly Funds</th>
                 <th>Actual Percentage of Total Monthly Funds</th>
-                <th>Edit/Delete</th>
+                <th>Remove Entry</th>
             </tr>
         </thead>
-    </table>
-    <tbody>
+        <tbody>
 
-        <!-- this needs to be rendered dynamically -->
-        <!-- <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr> -->
-    </tbody>
+            <!-- this needs to be rendered dynamically -->
+            <tr>
+                <td>Phone Bill</td>
+                <td>$55</td>
+                <td>High</td>
+                <td>10%</td>
+                <td>15%</td>
+                <td><button>Delete</button></td>
+            </tr>
+             
+        </tbody>
+    </table>
+</div>
+
+<div class="input-container" align="center">
+    <input type="text" id="enterBudget" placeholder="Enter Amount"/>
+    <button>Add Budget</button>
+</div>
+
+<div class="expense-container" align="center">
+    <div class="expense-input-wrapper">
+        <label for="select">Expense Name</label>
+        <input type="text" placeholder="eg. Phone Bill" />
+        <label for="select">Cost Amount</label>
+        <input type="text" placeholder="eg. 100" />
+        <label for="select">Priority</label>
+        <select>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </select>   
+        <label for="select">Desired Percentage Amount</label>
+        <input type="text" placeholder="eg. 15%" />
+        <div class="expense-button-wrapper">
+            <button>Add</button>
+            <button>Cancel</button>
+        </div>
+    </div> 
 </div>
