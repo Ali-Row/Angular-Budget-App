@@ -2,6 +2,8 @@
 
     <div>
         <h2 align="center">Total Monthly Funds: ${{budgetTotal}}</h2>
+
+        <!-- Table -->
         <div class="table-container">
             <table>
                 <thead>
@@ -21,6 +23,8 @@
                         <td>${{data.costAmount}}</td>
                         <td>{{data.priority}}</td>
                         <td>{{data.desiredPercentage}}%</td>
+                        <!-- BONUS Using [ngClass] to dynamically add a "highlight-red" class based on if the actualPercentage is higher than the desiredPercentage.
+                            As well as including a custom pipe I made for rounding the decimal places down, this pipe could be improved with some more work. -->
                         <td [ngClass]="{'highlight-red' : data.actualPercentage > data.desiredPercentage}">{{data.actualPercentage | roundDown}}%</td>
                         <td align="center">
                             <button (click)="editRow(data)"><i class="fas fa-pen"></i></button>
@@ -32,6 +36,7 @@
         </div>
     </div>
 
+    <!-- Add/Update/Cancel Modal -->
     <div>
         <div class="input-container" align="center">
             <input [(ngModel)]="budgetInput" id="budgetInput" placeholder="Enter Amount"/>

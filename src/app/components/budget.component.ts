@@ -41,10 +41,11 @@ export class BudgetComponent implements OnInit {
         this.evaluateActualPercentage();
     }
 
+    // When called this function adds the newly added expense to the expenses array and the data gets displayed on the page
     addExpense(): void {
-    // Make sure the user actually fills out all of the fields on the form
+    // Make sure the user actually fills out every field on the form...
     if(!this.input.expenseName || !this.input.costAmount || !this.input.desiredPercentage) return alert("Please fill out all of the fields before adding!");
-
+    // Create a new object that holds the expenses data coming from the input fields
     let newExpenseObj: Expenses = {
         id: this.newUuid(),
         expenseName: this.input.expenseName,
@@ -53,12 +54,13 @@ export class BudgetComponent implements OnInit {
         desiredPercentage: this.input.desiredPercentage,
         actualPercentage: 0
     }
-
+    // Push the new expenses object to the expenses array
     this.expenses.push(newExpenseObj);
     this.evaluateActualPercentage();
     this.resetExpense();
     }
 
+    // Reset the expenses modal to default values
     resetExpense(): void {
        this.input = {
         id: "",
@@ -68,7 +70,7 @@ export class BudgetComponent implements OnInit {
         desiredPercentage: 0,
         actualPercentage: 0
        } 
-       
+
        this.expenseInputHeading = "Add A New Expense"
     }
     
@@ -84,13 +86,12 @@ export class BudgetComponent implements OnInit {
         let existingData = this.expenses.find((entry: Expenses) => entry.id === this.input.id);
 
         if (!existingData) return alert("Click edit first!");
-
+        // Mutate the data in the existingData object with our new data from the input fields
         existingData.expenseName = this.input.expenseName;
         existingData.costAmount = this.input.costAmount;
         existingData.priority = this.input.priority;
         existingData.desiredPercentage = this.input.desiredPercentage;
 
-        // Re render the percentage in the DOM
         this.evaluateActualPercentage();
         this.resetExpense();
     }
@@ -98,13 +99,15 @@ export class BudgetComponent implements OnInit {
     // This function works out the actual percentage based on the entered cost vs the actual monthly budget
     evaluateActualPercentage = () => this.expenses.map((entry: Expenses) =>  Math.floor(entry.actualPercentage = entry.costAmount * 100 / this.budgetTotal)); 
 
+    // When the edit button is clicked this runs...
     editRow(data: Expenses): void {
         this.input = Object.assign({}, data);
         this.expenseInputHeading = "Update An Expense"
     } 
+    // When the delete button is clicked this runs...
     deleteRow(data: Expenses): void {
         this.expenses = this.expenses.filter((entry: Expenses) => entry.id != data.id);
-        // We want to reset the expense modal to default if there is nothing left in the expenses array
+        // We want to reset the expense modal to default if there is nothing left in the expenses array when deleting
         if (this.expenses.length === 0) return this.resetExpense();
     } 
 
