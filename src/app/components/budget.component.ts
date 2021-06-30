@@ -41,7 +41,7 @@ export class BudgetComponent implements OnInit {
 
     addExpense(): void {
     // Make sure the user actually fills out all of the fields on the form
-    // if(!this.input.expenseName || !this.input.costAmount || !this.input.desiredPercentage) return alert("Please fill out all fields!");
+    // if(!this.input.expenseName || !this.input.costAmount || !this.input.desiredPercentage) return alert("Please fill out all of the fields before adding!");
 
     let newExpenseObj: Expenses = {
         id: this.newUuid(),
@@ -56,13 +56,23 @@ export class BudgetComponent implements OnInit {
 
     this.evaluateActualPercentage();
 
+    // this.updateExistingExpense();
     }
 
-    cancelExpense(): void {
-
+    resetExpense(): void {
+       this.input = {
+        id: "",
+        expenseName: "",
+        costAmount: 0,
+        priority: "Medium",
+        desiredPercentage: 0,
+        actualPercentage: 0
+       } 
     }
+
     editRow(data: Expenses): void {
-
+        console.log(data)
+        this.input = Object.assign({}, data);
     }
     deleteRow(data: Expenses): void {
         this.expenses = this.expenses.filter((entry: Expenses) => entry.id != data.id);
@@ -74,6 +84,19 @@ export class BudgetComponent implements OnInit {
           let r = Math.random() * 16 | 0, res = c == 'x' ? r : (r & 0x3 | 0x8);
           return res.toString(16);
         });
+    }
+
+    updateExistingExpense(): void {
+        let existingData = this.expenses.find((entry: Expenses) => entry.id === this.input.id);
+        console.log("existing data =>", existingData);
+        if (!existingData) return alert("Click edit first!");
+
+        existingData.expenseName = this.input.expenseName;
+        existingData.costAmount = this.input.costAmount;
+        existingData.priority = this.input.priority;
+        existingData.desiredPercentage = this.input.desiredPercentage;
+
+        this.evaluateActualPercentage();
     }
 
     evaluateActualPercentage(): void {

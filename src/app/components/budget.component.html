@@ -16,7 +16,6 @@
                 </thead>
                 <tbody>
 
-                    <!-- this needs to be rendered dynamically -->
                     <tr *ngFor="let data of expenses">
                         <td>{{data.expenseName}}</td>
                         <td>${{data.costAmount}}</td>
@@ -41,6 +40,7 @@
 
         <div class="expense-container" align="center">
             <div class="expense-input-wrapper">
+                <h3 align="center">Add A New Expense <i class="fas fa-money-check-alt"></i></h3>
                 <label for="select">Expense Name</label>
                 <input [(ngModel)]="input.expenseName" type="text" placeholder="eg. Phone Bill" />
                 <label for="select">Cost</label>
@@ -55,7 +55,8 @@
                 <input [(ngModel)]="input.desiredPercentage" type="text" placeholder="eg. 15%" />
                 <div class="expense-button-wrapper">
                     <button (click)="addExpense()">Add</button>
-                    <button (click)="cancelExpense()">Cancel</button>
+                    <button (click)="updateExistingExpense()">Update</button>
+                    <button (click)="resetExpense()">Cancel</button>
                 </div>
             </div> 
         </div>

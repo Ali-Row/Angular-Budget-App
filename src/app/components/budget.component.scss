@@ -1,6 +1,7 @@
 $table-border-color: rgb(43, 94, 156);
 $primary-color: rgb(51, 120, 204);
 $secondary-color: rgb(50, 98, 156);
+$third-color: rgba(195, 221, 243, 0.728);
 
 .container {
     display: flex;
@@ -37,16 +38,31 @@ table {
 }
 .input-container > input {
     border: none;
-    border-bottom: solid rgb(179, 179, 179) .1rem;
+    border-bottom: solid rgb(208, 208, 208) .13rem;
     background: none;
 }
-.expense-input-wrapper > input {
+
+// .input-container > input:focus {
+//     outline: none;
+//     border-bottom: solid rgb(0, 0, 0) .1rem;
+// }
+.expense-input-wrapper > input, select {
     border: none;
-    border-bottom: solid rgb(255, 255, 255) .1rem;
+    border-bottom: solid rgb(255, 255, 255) .13rem !important;
 }
 .input-container > input:focus, .expense-input-wrapper > input:focus, select:focus {
     outline: none;
-    border-bottom: solid rgb(0, 0, 0) .1rem;
+    border-bottom: solid $table-border-color .13rem !important;
+}
+.expense-input-wrapper > label {
+    font-size: .9rem;
+    padding: .2rem;
+    margin-top: .4rem;
+}
+.expense-input-wrapper > h3 {
+    color: $table-border-color;
+    font-size: 1.3rem;
+    margin-bottom: .5rem;
 }
 .input-container > button, .expense-button-wrapper > button, td > button {
     background: $primary-color;
@@ -79,7 +95,7 @@ table {
     margin-left: .5rem;
 }
 .expense-input-wrapper {
-    background: rgba(195, 221, 243, 0.728);
+    background: $third-color;
     padding: 2rem;
     border-bottom-left-radius: .5rem;
     border-bottom-right-radius: .5rem;

@@ -49,18 +49,30 @@ table {
 
 .input-container > input {
   border: none;
-  border-bottom: solid #b3b3b3 0.1rem;
+  border-bottom: solid #d0d0d0 0.13rem;
   background: none;
 }
 
-.expense-input-wrapper > input {
+.expense-input-wrapper > input, select {
   border: none;
-  border-bottom: solid white 0.1rem;
+  border-bottom: solid white 0.13rem !important;
 }
 
 .input-container > input:focus, .expense-input-wrapper > input:focus, select:focus {
   outline: none;
-  border-bottom: solid black 0.1rem;
+  border-bottom: solid #2b5e9c 0.13rem !important;
+}
+
+.expense-input-wrapper > label {
+  font-size: 0.9rem;
+  padding: 0.2rem;
+  margin-top: 0.4rem;
+}
+
+.expense-input-wrapper > h3 {
+  color: #2b5e9c;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
 }
 
 .input-container > button, .expense-button-wrapper > button, td > button {
