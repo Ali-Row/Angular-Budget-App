@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BudgetComponent } from './components/budget.component';
 import { FormsModule } from '@angular/forms';
+import { RoundDownPipe } from './pipes/round-down.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BudgetComponent
+    BudgetComponent,
+    RoundDownPipe
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,7 @@ interface Expenses {
   templateUrl: "./budget.component.html"
 })
 
+// Export the BudgetComponent class
 export class BudgetComponent implements OnInit {
     constructor() {};
     ngOnInit(): void {};
@@ -32,6 +33,7 @@ export class BudgetComponent implements OnInit {
     }
     expenses: Expenses[] = [];
 
+    // This function updates the "Total Monthly Funds" number at the top of the page
     updateBudgetAmount(budget: number): void {
         this.budgetTotal = budget;
         this.evaluateActualPercentage();
