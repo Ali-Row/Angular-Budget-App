@@ -6,9 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class RoundDownPipe implements PipeTransform {
 
   transform(percentage: any): any {
-    /* If the number ends with a perfectly rounded .00 decimal place return only the first number
-    for example 100.00 => 100% else return the two decimal places like this for example 102.30% */
-    return percentage.toFixed(2).endsWith(".00") ? percentage : percentage.toFixed(2);
+    /* If the number ends with a decimal place return the full number limited to 2 decimal places for example 104.44 => 104.44% 
+    else return just the number without any decimal places */
+    return parseInt(percentage.toFixed(2).split(".")[1]) > 0 ? percentage.toFixed(2).split(".").join(".") : percentage;
   }
 
 }
