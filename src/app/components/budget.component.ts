@@ -17,8 +17,7 @@ interface Expenses {
 
 export class BudgetComponent implements OnInit {
 
-    ngOnInit(): void {};
-    constructor() { };
+   
 
     budgetInput: number = 100;
     budgetTotal: number = 100;
@@ -32,7 +31,10 @@ export class BudgetComponent implements OnInit {
         actualPercentage: 0
     }
     expenses: Expenses[] = [];
+    constructor() { }
+    ngOnInit(): void {
 
+    }
 
     updateBudgetAmount(budget: number): void {
         this.budgetTotal = budget;
@@ -41,7 +43,7 @@ export class BudgetComponent implements OnInit {
 
     addExpense(): void {
     // Make sure the user actually fills out all of the fields on the form
-    if(!this.input.expenseName || !this.input.costAmount || !this.input.desiredPercentage) return alert("Please fill out all fields!");
+    // if(!this.input.expenseName || !this.input.costAmount || !this.input.desiredPercentage) return alert("Please fill out all fields!");
 
     let newExpenseObj: Expenses = {
         id: this.newUuid(),
@@ -53,6 +55,9 @@ export class BudgetComponent implements OnInit {
     }
 
     this.expenses.push(newExpenseObj);
+
+    this.evaluateActualPercentage();
+
     }
 
     cancelExpense(): void {
@@ -68,8 +73,7 @@ export class BudgetComponent implements OnInit {
     }
 
     evaluateActualPercentage(): void {
-        // work on this tomorrow
-        console.log("working");
+        this.expenses.map((entry: Expenses) => entry.actualPercentage = entry.costAmount * 100 / this.budgetTotal);
     }
       
 }

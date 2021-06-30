@@ -1,15 +1,14 @@
-<h2 align="center">Total Budget: ${{budgetTotal}}</h2>
-
+<h2 align="center">Total Monthly Funds: ${{budgetTotal}}</h2>
 <div class="table-container">
     <table>
         <thead>
             <tr>
-                <th>Expense</th>
+                <th>Expense Name</th>
                 <th>Cost</th>
                 <th>Priority</th>
-                <th>Desired Percentage of Total Monthly Funds</th>
-                <th>Actual Percentage of Total Monthly Funds</th>
-                <th>Remove Entry</th>
+                <th>Desired % of Total Monthly Funds</th>
+                <th>Actual % of Total Monthly Funds</th>
+                <th>Edit/Delete Entry</th>
             </tr>
         </thead>
         <tbody>
@@ -17,11 +16,11 @@
             <!-- this needs to be rendered dynamically -->
             <tr *ngFor="let data of expenses">
                 <td>{{data.expenseName}}</td>
-                <td>{{data.costAmount}}</td>
+                <td>${{data.costAmount}}</td>
                 <td>{{data.priority}}</td>
-                <td>{{data.desiredPercentage}}</td>
-                <td>{{data.actualPercentage}}</td>
-                <td><button>Delete</button></td>
+                <td>{{data.desiredPercentage}}%</td>
+                <td [ngClass]="{'highlight-red' : data.actualPercentage > data.desiredPercentage}">{{data.actualPercentage}}%</td>
+                <td align="center"><button>Edit</button><button>Delete</button></td>
             </tr>            
         </tbody>
     </table>
@@ -37,7 +36,7 @@
     <div class="expense-input-wrapper">
         <label for="select">Expense Name</label>
         <input [(ngModel)]="input.expenseName" type="text" placeholder="eg. Phone Bill" />
-        <label for="select">Cost Amount</label>
+        <label for="select">Cost</label>
         <input [(ngModel)]="input.costAmount" type="text" placeholder="eg. 50" />
         <label for="select">Priority</label>
         <select [(ngModel)]="input.priority" name="priorityDropdown">

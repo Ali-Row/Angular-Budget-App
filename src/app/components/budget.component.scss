@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
 $table-border-color: rgb(43, 94, 156);
 $primary-color: rgb(51, 120, 204);
 $secondary-color: rgb(50, 98, 156);
 
-* {
-    font-family: 'Poppins', sans-serif;
+th {
+    padding: 1rem;
 }
-table, th, td {
+td {
+    padding: .3rem;
+}
+th, td {
    border: solid $table-border-color .1rem; 
    border-collapse: collapse;
-   padding: 1rem;
 } 
 th {
     background: $primary-color;
@@ -28,21 +28,26 @@ table {
 }
 .input-container > input, .input-container > button {
     padding: .6rem;
+    width: 10.9rem;
 }
-.input-container > input, .expense-input-wrapper > input {
+.input-container > input {
     border: none;
-    border-bottom: solid rgb(199, 199, 199) .1rem;
+    border-bottom: solid rgb(179, 179, 179) .1rem;
 }
-.input-container > input:focus, .expense-input-wrapper > input:focus {
+.expense-input-wrapper > input {
+    border: none;
+    border-bottom: solid rgb(255, 255, 255) .1rem;
+}
+.input-container > input:focus, .expense-input-wrapper > input:focus, select:focus {
     outline: none;
     border-bottom: solid rgb(0, 0, 0) .1rem;
 }
-.input-container > button, .expense-button-wrapper > button {
+.input-container > button, .expense-button-wrapper > button, td > button {
     background: $primary-color;
     border: solid $primary-color .1rem;
     color: white;
 }
-.input-container > button:hover, .expense-button-wrapper > button:hover {
+.input-container > button:hover, .expense-button-wrapper > button:hover, td > button:hover {
     background: $secondary-color;
     border-color: $secondary-color;
 }
@@ -53,8 +58,8 @@ table {
     max-width: 300px;
     padding: 1rem;
 }
-.expense-input-wrapper > input {
-    padding: 1rem;
+.expense-input-wrapper > input, select {
+    padding: .7rem;
 }
 .expense-button-wrapper {
     display: flex;
@@ -62,15 +67,30 @@ table {
     padding-top: .4rem;
 }
 .expense-button-wrapper > button {
-    padding: .7rem;
+    padding: .4rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
     margin-left: .5rem;
 }
 .expense-input-wrapper {
     background: rgba(195, 221, 243, 0.728);
     padding: 2rem;
-    border-radius: .5rem;
-    border: solid $table-border-color .13rem;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    border: solid $table-border-color .10rem;
     margin-top: 1rem;
     box-shadow: 0px 0px 9px 2px rgba(79, 79, 79, 0.363);
 }
-
+select {
+    border: none;
+    border-bottom: solid rgb(255, 255, 255) .1rem;
+}
+td > button {
+    padding: .2rem;
+    padding-left: .6rem;
+    padding-right: .6rem;
+    margin: .1rem;
+}
+.highlight-red {
+    background: rgba(241, 100, 100, 0.776);
+}
