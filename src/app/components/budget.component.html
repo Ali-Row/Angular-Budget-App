@@ -30,7 +30,7 @@
 
 
 <div class="input-container" align="center">
-    <input id="budgetInput" placeholder="Enter Amount"/>
+    <input [(ngModel)]="budgetInput" id="budgetInput" placeholder="Enter Amount"/>
     <button (click)="updateBudgetAmount(budgetInput)">Add Budget</button>
 </div>
 
