@@ -1,3 +1,16 @@
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
 th {
   padding: 1rem;
 }
@@ -22,10 +35,11 @@ table {
       align-content: center;
   padding: 0rem;
   border-collapse: collapse;
+  background: white;
 }
 
 .input-container {
-  margin-top: 3rem;
+  margin-top: 2.2rem;
 }
 
 .input-container > input, .input-container > button {
@@ -36,6 +50,7 @@ table {
 .input-container > input {
   border: none;
   border-bottom: solid #b3b3b3 0.1rem;
+  background: none;
 }
 
 .expense-input-wrapper > input {
@@ -119,5 +134,14 @@ td > button {
 .highlight-red {
   background: rgba(241, 100, 100, 0.776);
   color: #720505;
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=budget.component.css.map */

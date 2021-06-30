@@ -2,6 +2,11 @@ $table-border-color: rgb(43, 94, 156);
 $primary-color: rgb(51, 120, 204);
 $secondary-color: rgb(50, 98, 156);
 
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
 th {
     padding: 1rem;
 }
@@ -21,9 +26,10 @@ table {
     align-content: center;
     padding: 0rem;
     border-collapse: collapse;
+    background: white;
 }
 .input-container {
-    margin-top: 3rem;
+    margin-top: 2.2rem;
 }
 .input-container > input, .input-container > button {
     padding: .6rem;
@@ -32,6 +38,7 @@ table {
 .input-container > input {
     border: none;
     border-bottom: solid rgb(179, 179, 179) .1rem;
+    background: none;
 }
 .expense-input-wrapper > input {
     border: none;
@@ -93,4 +100,10 @@ td > button {
 .highlight-red {
     background: rgba(241, 100, 100, 0.776);
     color: rgb(114, 5, 5);
+}
+
+@media screen and (max-width: 1440px) {
+    .container {
+        flex-direction: column;
+    }
 }

@@ -32,7 +32,7 @@ h1 {
 
 footer {
   background: #3378cc;
-  padding: 12rem;
+  padding: 8rem;
   margin: 0;
   margin-top: 7rem;
 }
@@ -45,5 +45,16 @@ footer {
   margin-top: -3.2rem;
   margin-bottom: 4rem;
   color: white;
+}
+
+.below-footer-bottom-skew {
+  -webkit-transform: skewY(-3deg);
+          transform: skewY(-3deg);
+}
+
+.below-footer-bottom, .below-footer-bottom-skew {
+  padding: 4rem;
+  margin-top: -3rem;
+  background: #8abfeb;
 }
 /*# sourceMappingURL=app.component.css.map */
