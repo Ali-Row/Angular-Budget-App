@@ -1,3 +1,5 @@
+<h1 align="center">Total Budget: ${{budgetTotal}}</h1>
+
 <div class="table-container">
     <table>
         <thead>
@@ -13,12 +15,12 @@
         <tbody>
 
             <!-- this needs to be rendered dynamically -->
-            <tr>
-                <td>Phone Bill</td>
-                <td>$55</td>
-                <td>High</td>
-                <td>10%</td>
-                <td>15%</td>
+            <tr *ngFor="let data of expenses">
+                <td>{{data.expenseName}}</td>
+                <td>{{data.costAmount}}</td>
+                <td>{{data.priority}}</td>
+                <td>{{data.desiredPercentage}}</td>
+                <td>{{data.actualPercentage}}</td>
                 <td><button>Delete</button></td>
             </tr>
              
@@ -26,9 +28,10 @@
     </table>
 </div>
 
+
 <div class="input-container" align="center">
-    <input type="text" id="enterBudget" placeholder="Enter Amount"/>
-    <button>Add Budget</button>
+    <input id="budgetInput" placeholder="Enter Amount"/>
+    <button (click)="updateBudgetAmount(budgetInput)">Add Budget</button>
 </div>
 
 <div class="expense-container" align="center">
