@@ -20,7 +20,7 @@ td {
 }
 
 th, td {
-  border: solid #2b5e9c 0.1rem;
+  border: solid #2b5e9c 0.05rem;
   border-collapse: collapse;
 }
 
