@@ -43,7 +43,7 @@ export class BudgetComponent implements OnInit {
 
     addExpense(): void {
     // Make sure the user actually fills out all of the fields on the form
-    // if(!this.input.expenseName || !this.input.costAmount || !this.input.desiredPercentage) return alert("Please fill out all of the fields before adding!");
+    if(!this.input.expenseName || !this.input.costAmount || !this.input.desiredPercentage) return alert("Please fill out all of the fields before adding!");
 
     let newExpenseObj: Expenses = {
         id: this.newUuid(),
@@ -68,7 +68,7 @@ export class BudgetComponent implements OnInit {
         desiredPercentage: 0,
         actualPercentage: 0
        } 
-
+       
        this.expenseInputHeading = "Add A New Expense"
     }
     
