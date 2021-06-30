@@ -40,7 +40,7 @@
 
         <div class="expense-container" align="center">
             <div class="expense-input-wrapper">
-                <h3 align="center">Add A New Expense <i class="fas fa-money-check-alt"></i></h3>
+                <h3 align="center">{{expenseInputHeading}} <i class="fas fa-money-check-alt"></i></h3>
                 <label for="select">Expense Name</label>
                 <input [(ngModel)]="input.expenseName" type="text" placeholder="eg. Phone Bill" />
                 <label for="select">Cost</label>
@@ -52,7 +52,7 @@
                     <option value="Low">Low</option>
                 </select>   
                 <label for="select">Desired Percentage Amount</label>
-                <input [(ngModel)]="input.desiredPercentage" type="text" placeholder="eg. 15%" />
+                <input [(ngModel)]="input.desiredPercentage" type="text" placeholder="eg. 15" />
                 <div class="expense-button-wrapper">
                     <button (click)="addExpense()">Add</button>
                     <button (click)="updateExistingExpense()">Update</button>

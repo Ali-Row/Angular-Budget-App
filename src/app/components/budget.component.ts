@@ -31,6 +31,9 @@ export class BudgetComponent implements OnInit {
         desiredPercentage: 0,
         actualPercentage: 0
     }
+
+    expenseInputHeading: string = "Add A New Expense";
+
     expenses: Expenses[] = [];
 
     // This function updates the "Total Monthly Funds" number at the top of the page
@@ -53,10 +56,8 @@ export class BudgetComponent implements OnInit {
     }
 
     this.expenses.push(newExpenseObj);
-
     this.evaluateActualPercentage();
-
-    // this.updateExistingExpense();
+    this.resetExpense();
     }
 
     resetExpense(): void {
@@ -68,14 +69,8 @@ export class BudgetComponent implements OnInit {
         desiredPercentage: 0,
         actualPercentage: 0
        } 
-    }
 
-    editRow(data: Expenses): void {
-        console.log(data)
-        this.input = Object.assign({}, data);
-    }
-    deleteRow(data: Expenses): void {
-        this.expenses = this.expenses.filter((entry: Expenses) => entry.id != data.id);
+       this.expenseInputHeading = "Add A New Expense"
     }
     
     // This function generates a unique ID
@@ -85,10 +80,10 @@ export class BudgetComponent implements OnInit {
           return res.toString(16);
         });
     }
-
+    // When the update button is clicked this will be called
     updateExistingExpense(): void {
         let existingData = this.expenses.find((entry: Expenses) => entry.id === this.input.id);
-        console.log("existing data =>", existingData);
+
         if (!existingData) return alert("Click edit first!");
 
         existingData.expenseName = this.input.expenseName;
@@ -96,12 +91,23 @@ export class BudgetComponent implements OnInit {
         existingData.priority = this.input.priority;
         existingData.desiredPercentage = this.input.desiredPercentage;
 
+        // Re render the percentage in the DOM
         this.evaluateActualPercentage();
+        this.resetExpense();
     }
 
-    evaluateActualPercentage(): void {
-        this.expenses.map((entry: Expenses) =>  Math.floor(entry.actualPercentage = entry.costAmount * 100 / this.budgetTotal));
-        
-    }
+    // This function works out the actual percentage based on the entered cost vs the actual monthly budget
+    evaluateActualPercentage = () => this.expenses.map((entry: Expenses) =>  Math.floor(entry.actualPercentage = entry.costAmount * 100 / this.budgetTotal)); 
+
+    editRow(data: Expenses): void {
+        this.input = Object.assign({}, data);
+        this.expenseInputHeading = "Update An Expense"
+    } 
+    deleteRow(data: Expenses): void {
+        this.expenses = this.expenses.filter((entry: Expenses) => entry.id != data.id);
+        // We want to reset the expense modal to default if there is nothing left in the expenses array
+        if (this.expenses.length === 0) return this.resetExpense();
+    } 
+    
       
 }
