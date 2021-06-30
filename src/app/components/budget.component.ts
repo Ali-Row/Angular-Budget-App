@@ -33,7 +33,6 @@ export class BudgetComponent implements OnInit {
     }
 
     expenseInputHeading: string = "Add A New Expense";
-
     expenses: Expenses[] = [];
 
     // This function updates the "Total Monthly Funds" number at the top of the page
@@ -108,6 +107,5 @@ export class BudgetComponent implements OnInit {
         // We want to reset the expense modal to default if there is nothing left in the expenses array
         if (this.expenses.length === 0) return this.resetExpense();
     } 
-    
-      
+
 }
