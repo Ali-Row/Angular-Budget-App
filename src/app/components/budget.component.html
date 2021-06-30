@@ -20,7 +20,10 @@
                 <td>{{data.priority}}</td>
                 <td>{{data.desiredPercentage}}%</td>
                 <td [ngClass]="{'highlight-red' : data.actualPercentage > data.desiredPercentage}">{{data.actualPercentage}}%</td>
-                <td align="center"><button>Edit</button><button>Delete</button></td>
+                <td align="center">
+                    <button (click)="editRow(data)">Edit</button>
+                    <button (click)="deleteRow(data)">Delete</button>
+                </td>
             </tr>            
         </tbody>
     </table>

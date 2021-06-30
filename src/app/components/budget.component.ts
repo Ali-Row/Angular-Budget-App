@@ -63,8 +63,14 @@ export class BudgetComponent implements OnInit {
     cancelExpense(): void {
 
     }
+    editRow(data: Expenses): void {
+
+    }
+    deleteRow(data: Expenses): void {
+        this.expenses = this.expenses.filter((entry: Expenses) => entry.id != data.id);
+    }
     
-    // This function returns a unique ID
+    // This function generates a unique ID
     newUuid() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
           let r = Math.random() * 16 | 0, res = c == 'x' ? r : (r & 0x3 | 0x8);
