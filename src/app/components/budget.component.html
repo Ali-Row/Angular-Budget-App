@@ -1,4 +1,4 @@
-<h1 align="center">Total Budget: ${{budgetTotal}}</h1>
+<h2 align="center">Total Budget: ${{budgetTotal}}</h2>
 
 <div class="table-container">
     <table>
@@ -41,9 +41,9 @@
         <input [(ngModel)]="input.costAmount" type="text" placeholder="eg. 50" />
         <label for="select">Priority</label>
         <select [(ngModel)]="input.priority" name="priorityDropdown">
-            <option value="high">High</option>
-            <option value="medium">Medium</option>
-            <option value="low">Low</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
         </select>   
         <label for="select">Desired Percentage Amount</label>
         <input [(ngModel)]="input.desiredPercentage" type="text" placeholder="eg. 15%" />
