@@ -21,8 +21,8 @@
                 <td>{{data.desiredPercentage}}%</td>
                 <td [ngClass]="{'highlight-red' : data.actualPercentage > data.desiredPercentage}">{{data.actualPercentage}}%</td>
                 <td align="center">
-                    <button (click)="editRow(data)">Edit</button>
-                    <button (click)="deleteRow(data)">Delete</button>
+                    <button (click)="editRow(data)"><i class="fas fa-pen"></i></button>
+                    <button (click)="deleteRow(data)"><i class="fas fa-trash"></i></button>
                 </td>
             </tr>            
         </tbody>

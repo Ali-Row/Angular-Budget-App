@@ -22,7 +22,6 @@ table {
       align-content: center;
   padding: 0rem;
   border-collapse: collapse;
-  border: solid #2b5e9c 0.15rem;
 }
 
 .input-container {
@@ -114,10 +113,11 @@ td > button {
   padding: 0.2rem;
   padding-left: 0.6rem;
   padding-right: 0.6rem;
-  margin: 0.1rem;
+  margin: 0.3rem;
 }
 
 .highlight-red {
   background: rgba(241, 100, 100, 0.776);
+  color: #720505;
 }
 /*# sourceMappingURL=budget.component.css.map */

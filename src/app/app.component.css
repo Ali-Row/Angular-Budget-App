@@ -18,17 +18,32 @@ header {
 img {
   max-width: 4rem;
   max-height: 4rem;
+  -webkit-transform: skewY(3deg);
+          transform: skewY(3deg);
+  margin-bottom: 0.9rem;
 }
 
 h1 {
   text-align: center;
   font-size: 2rem;
+  -webkit-transform: skewY(3deg);
+          transform: skewY(3deg);
 }
 
 footer {
-  background: #205391;
+  background: #3378cc;
   padding: 12rem;
   margin: 0;
-  margin-top: 5rem;
+  margin-top: 7rem;
+}
+
+.skew {
+  background: #3378cc;
+  padding: 3rem;
+  -webkit-transform: skewY(-3deg);
+          transform: skewY(-3deg);
+  margin-top: -3.2rem;
+  margin-bottom: 4rem;
+  color: white;
 }
 /*# sourceMappingURL=app.component.css.map */

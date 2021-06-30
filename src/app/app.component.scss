@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+$primary-color: rgb(51, 120, 204);
+
 * {
     font-family: 'Poppins', sans-serif;
 }
@@ -11,14 +13,25 @@ header {
 img {
     max-width: 4rem;
     max-height: 4rem;
+    transform: skewY(3deg);
+    margin-bottom: .9rem;
 }
 h1 { 
     text-align: center;
     font-size: 2rem;
+    transform: skewY(3deg);
 }
 footer {
-    background: rgb(32, 83, 145);
+    background: $primary-color;
     padding: 12rem;
     margin: 0;
-    margin-top: 5rem;
+    margin-top: 7rem;
+}
+.skew {
+    background: $primary-color;
+    padding: 3rem;
+    transform: skewY(-3deg);
+    margin-top: -3.2rem;
+    margin-bottom: 4rem;
+    color: white;
 }

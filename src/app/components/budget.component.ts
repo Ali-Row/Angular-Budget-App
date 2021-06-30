@@ -16,9 +16,9 @@ interface Expenses {
 })
 
 export class BudgetComponent implements OnInit {
-
+    constructor() {};
+    ngOnInit(): void {};
    
-
     budgetInput: number = 100;
     budgetTotal: number = 100;
 
@@ -31,10 +31,6 @@ export class BudgetComponent implements OnInit {
         actualPercentage: 0
     }
     expenses: Expenses[] = [];
-    constructor() { }
-    ngOnInit(): void {
-
-    }
 
     updateBudgetAmount(budget: number): void {
         this.budgetTotal = budget;
@@ -79,7 +75,8 @@ export class BudgetComponent implements OnInit {
     }
 
     evaluateActualPercentage(): void {
-        this.expenses.map((entry: Expenses) => entry.actualPercentage = entry.costAmount * 100 / this.budgetTotal);
+        this.expenses.map((entry: Expenses) =>  Math.floor(entry.actualPercentage = entry.costAmount * 100 / this.budgetTotal));
+        
     }
       
 }
